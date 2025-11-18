@@ -1,0 +1,39 @@
+# Core dependencies
+numpy>=1.24.0
+pandas>=2.0.0
+scikit-learn>=1.3.0
+scipy>=1.10.0
+pyyaml>=6.0
+
+# Sequential recommendation libraries
+torch>=2.0.0
+torchvision>=0.15.0
+transformers>=4.30.0
+recbole>=1.1.0
+
+# Data processing and visualization
+tqdm>=4.65.0
+matplotlib>=3.7.0
+plotly>=5.15.0
+seaborn>=0.12.0
+
+# Development and testing
+pytest>=7.4.0
+black>=23.0.0
+ruff>=0.0.280
+pre-commit>=3.3.0
+
+# Demo and API
+streamlit>=1.25.0
+gradio>=3.40.0
+fastapi>=0.100.0
+uvicorn>=0.23.0
+
+# Optional: Experiment tracking
+mlflow>=2.5.0
+wandb>=0.15.0
+
+# Optional: Advanced features
+faiss-cpu>=1.7.4
+sentence-transformers>=2.2.0
+umap-learn>=0.5.3

@@ -1,0 +1,55 @@
+# Configuration for Sequential Recommendation System
+
+# Data configuration
+data:
+  interactions_file: "data/interactions.csv"
+  items_file: "data/items.csv"
+  users_file: "data/users.csv"
+  train_ratio: 0.7
+  val_ratio: 0.15
+  test_ratio: 0.15
+  min_sequence_length: 3
+  max_sequence_length: 50
+
+# Model configuration
+models:
+  markov_chain:
+    smoothing: 0.1
+    order: 1
+  
+  gru4rec:
+    hidden_size: 128
+    num_layers: 2
+    dropout: 0.25
+    learning_rate: 0.001
+    batch_size: 256
+    epochs: 50
+  
+  sasrec:
+    hidden_size: 128
+    num_heads: 4
+    num_layers: 2
+    dropout: 0.1
+    learning_rate: 0.001
+    batch_size: 256
+    epochs: 50
+
+# Evaluation configuration
+evaluation:
+  metrics: ["precision@5", "precision@10", "recall@5", "recall@10", "ndcg@5", "ndcg@10", "hit_rate@5", "hit_rate@10"]
+  k_values: [5, 10, 20]
+  diversity_metrics: ["intra_list_diversity", "coverage"]
+
+# Training configuration
+training:
+  random_seed: 42
+  device: "cuda"  # or "cpu"
+  num_workers: 4
+  early_stopping_patience: 10
+  save_best_model: true
+
+# Demo configuration
+demo:
+  port: 8501
+  host: "localhost"
+  max_recommendations: 10
